@@ -2,7 +2,6 @@ version: 2
 jobs:
   build:
     working_directory: ~/tmp
-
     docker:
       - image: circleci/node:7
     steps:
@@ -18,6 +17,4 @@ jobs:
           background: true
       - run: yarn install
       - run: npm run-script ng build
-      - run: npm run-script ng lint
       - run: npm run-script ng test
-      - run: npm run-script ng e2e
