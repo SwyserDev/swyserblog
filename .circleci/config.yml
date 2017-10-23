@@ -7,3 +7,7 @@ jobs:
     steps:
       - checkout
       - run: yarn install
+      - run: npm run-script ng build
+      - run: npm run-script ng test
+      - run: npm run-script ng lint
+      - run: npm run-script ng e2e
