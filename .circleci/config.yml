@@ -8,6 +8,9 @@ jobs:
       - checkout
       - run: yarn install
       - run: npm run-script ng build
-      - run: npm run-script ng test
       - run: npm run-script ng lint
+    docker:
+     - image: selenium/standalone-chrome:3.1.0
+     steps:
+      - run: npm run-script ng test
       - run: npm run-script ng e2e
